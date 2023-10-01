@@ -23,12 +23,12 @@ const app = express();
 
 var corsOptions = {
   origin: "http://localhost:8080",
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // If you need to send cookies or authentication headers
-  optionsSuccessStatus: 204, // Set the status code for successful preflight requests
+  // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  // credentials: true, // If you need to send cookies or authentication headers
+  // optionsSuccessStatus: 204, // Set the status code for successful preflight requests
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
