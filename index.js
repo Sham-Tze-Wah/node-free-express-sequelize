@@ -22,13 +22,13 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8080",
+  //origin: "http://localhost:8080",
   // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   // credentials: true, // If you need to send cookies or authentication headers
   // optionsSuccessStatus: 204, // Set the status code for successful preflight requests
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -60,7 +60,7 @@ require("./app/routes/turorial.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
-const HOSTNAME = process.env.HOSTNAME || localhost;
-app.listen(PORT, HOSTNAME, () => {
+//const HOSTNAME = process.env.HOSTNAME || localhost;
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
